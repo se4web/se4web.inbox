@@ -9,10 +9,11 @@ import org.testng.annotations.AfterSuite;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.BeforeSuite;
 
-import ru.stqa.selenium.factory.WebDriverFactory;
-import ru.stqa.selenium.factory.WebDriverFactoryMode;
+//import ru.stqa.selenium.factory.WebDriverFactory;
+//import ru.stqa.selenium.factory.WebDriverFactoryMode;
 
 import se4web.util.PropertyLoader;
+import se4web.util.WebDriverFactory;
 
 /**
  * Base class for TestNG-based test classes
@@ -33,16 +34,17 @@ public class TestNgTestBase {
       gridHubUrl = null;
     }
     capabilities = PropertyLoader.loadCapabilities();
-    WebDriverFactory.setMode(WebDriverFactoryMode.THREADLOCAL_SINGLETON);
+//    WebDriverFactory.setMode(WebDriverFactoryMode.THREADLOCAL_SINGLETON);
   }
 
   @BeforeMethod
   public void initWebDriver() {
+//    driver = ru.stqa.selenium.factory.WebDriverFactory.getDriver(gridHubUrl, capabilities);
     driver = WebDriverFactory.getDriver(gridHubUrl, capabilities);
   }
 
   @AfterSuite(alwaysRun = true)
   public void tearDown() {
-    WebDriverFactory.dismissAll();
+    WebDriverFactory.dismissDriver();
   }
 }
