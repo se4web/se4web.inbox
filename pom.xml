@@ -114,7 +114,7 @@
     <profile>
       <id>localhost</id>
       <properties>
-        <site.url>http://localhost/</site.url>
+        <site.url>https://inbox.google.com</site.url>
       </properties>
       <activation>
         <activeByDefault>true</activeByDefault>
