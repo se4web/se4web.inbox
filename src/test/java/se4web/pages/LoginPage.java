@@ -6,6 +6,7 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.CacheLookup;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.How;
+import org.testng.Assert;
 
 /**
  * Sample page
@@ -24,8 +25,26 @@ public class LoginPage extends Page {
     @CacheLookup
     public WebElement signInButton;
 
+/*
     public LoginPage(WebDriver webDriver) {
         super(webDriver);
+    }
+*/
+
+    public LoginPage (WebDriver driver) {
+        super(driver);
+    }
+
+    @Override
+    protected void isLoaded() throws Error {
+        String url = driver.getCurrentUrl();
+        Assert.assertTrue(url.contains("google"), "Not on the Google login page" + url);
+    }
+
+    @Override
+    protected void load() {
+        driver.get("https://inbox.google.com");
+        this.loginTo("se4web@gmail.com", "Se4webSe4web");
     }
 
     public void setEmailTextBox(String strUserName) {

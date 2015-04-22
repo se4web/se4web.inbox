@@ -40,6 +40,7 @@ public class TestNgTestBase {
   @BeforeMethod
   public void initWebDriver() {
 //    driver = ru.stqa.selenium.factory.WebDriverFactory.getDriver(gridHubUrl, capabilities);
+//    driver = WebDriverFactory.getDriver(gridHubUrl, capabilities);
     driver = WebDriverFactory.getDriver(gridHubUrl, capabilities);
   }
 

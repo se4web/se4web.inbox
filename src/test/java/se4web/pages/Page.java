@@ -1,21 +1,36 @@
 package se4web.pages;
 
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.support.PageFactory;
+import org.openqa.selenium.support.ui.LoadableComponent;
 
 /**
  * Abstract class representation of a Page in the UI. Page object pattern
  */
-public abstract class Page {
+public abstract class Page extends LoadableComponent<Page> {
 
   protected WebDriver driver;
+  protected final LoadableComponent<?> parent;
+
+//  protected final LoadableComponent<?> parent;
 
   /*
    * Constructor injecting the WebDriver interface
    * 
    * @param webDriver
    */
+  public Page(WebDriver driver, LoadableComponent<?> parent) {
+    this.driver = driver;
+    this.parent = parent;
+
+    PageFactory.initElements(driver, this);
+  }
+
   public Page(WebDriver driver) {
     this.driver = driver;
+    this.parent = null;
+
+    PageFactory.initElements(driver, this);
   }
 
   public String getTitle() {

@@ -16,25 +16,33 @@ public class TestLoginPage extends TestNgTestBase {
 
   @BeforeMethod
   public void initPageObjects() {
-    loginpage = PageFactory.initElements(driver, LoginPage.class);
+//    loginpage = PageFactory.initElements(driver, LoginPage.class);
+    loginpage = new LoginPage(driver);
+    loginpage.get();
   }
 
   @Test (priority=1)
   public void testLoginPageHasTitle() {
-    driver.get(baseUrl);
+//    driver.get(baseUrl);
     Assert.assertFalse("".equals(loginpage.getTitle()));
   }
 
   @Test (priority=1)
   public void testSignInButtonDisplayed() {
-    driver.get(baseUrl);
+//    driver.get(baseUrl);
     Assert.assertTrue(loginpage.signInButton.isDisplayed());
   }
 
   @Test (priority=1)
   public void testSignInButtonEnabled() {
-    driver.get(baseUrl);
+//    driver.get(baseUrl);
     Assert.assertTrue(loginpage.signInButton.isEnabled());
+  }
+
+  @Test (priority=1)
+  public void testLoginWrongCredentials() {
+//    driver.get(baseUrl);
+    loginpage.loginTo("wrongLogin", "wrongPassword");
   }
 
   @Test (priority=2)
