@@ -31,8 +31,11 @@ public class LoginPage extends Page {
     }
 */
 
-    public LoginPage (WebDriver driver) {
+    Boolean SHOULD_LOGIN_TO; // if YES then try to login to HomePage with valid credential
+
+    public LoginPage (WebDriver driver, Boolean SHOULD_LOGIN_TO) {
         super(driver);
+        this.SHOULD_LOGIN_TO = SHOULD_LOGIN_TO;
     }
 
     @Override
@@ -44,7 +47,11 @@ public class LoginPage extends Page {
     @Override
     protected void load() {
         driver.get("https://inbox.google.com");
-        this.loginTo("se4web@gmail.com", "Se4webSe4web");
+
+        // if YES then try to login to HomePage with valid credential
+        if (this.SHOULD_LOGIN_TO) {
+            this.loginTo("se4web@gmail.com", "Se4webSe4web");
+        }
     }
 
     public void setEmailTextBox(String strUserName) {

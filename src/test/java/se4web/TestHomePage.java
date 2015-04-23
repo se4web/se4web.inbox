@@ -14,7 +14,7 @@ public class TestHomePage extends TestNgTestBase {
   @BeforeMethod
   public void initPageObjects() {
 //    loginpage = PageFactory.initElements(driver, LoginPage.class);
-    loginpage = new LoginPage(driver);
+    loginpage = new LoginPage(driver, Boolean.TRUE);
     homepage = new HomePage(driver, loginpage);
     homepage.get();
   }
