@@ -21,31 +21,31 @@ public class TestLoginPage extends TestNgTestBase {
     loginpage.get();
   }
 
-  @Test (priority=1)
+  @Test (groups = { "beforeSignIn" } )
   public void testLoginPageHasTitle() {
 //    driver.get(baseUrl);
     Assert.assertFalse("".equals(loginpage.getTitle()));
   }
 
-  @Test (priority=1)
+  @Test (groups = { "beforeSignIn" } )
   public void testSignInButtonDisplayed() {
 //    driver.get(baseUrl);
     Assert.assertTrue(loginpage.signInButton.isDisplayed());
   }
 
-  @Test (priority=1)
+  @Test (groups = { "beforeSignIn" } )
   public void testSignInButtonEnabled() {
 //    driver.get(baseUrl);
     Assert.assertTrue(loginpage.signInButton.isEnabled());
   }
 
-  @Test (priority=1)
+  @Test (dependsOnGroups = { "beforeSignIn" } , groups = { "SignIn" } )
   public void testLoginWrongCredentials() {
 //    driver.get(baseUrl);
     loginpage.loginTo("wrongLogin", "wrongPassword");
   }
 
-  @Test (priority=2)
+  @Test (dependsOnMethods = {"testLoginWrongCredentials"} , dependsOnGroups = { "beforeSignIn" } , groups = { "SignIn" } )
   public void testLoginRightCredentials() {
     driver.get(baseUrl);
     loginpage.loginTo("se4web@gmail.com", "Se4webSe4web");
