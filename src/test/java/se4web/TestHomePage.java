@@ -28,6 +28,9 @@ public class TestHomePage extends TestNgTestBase {
   @Test (priority=1)
   public void testAllLinks() {
 //    driver.get(baseUrl);
-    Assert.assertFalse("".equals(homepage.getTitle()));
+    homepage.getAllLinks();
   }
+
+  //driver.findElement(By.xpath("//div[@class='jL']"));
+
 }

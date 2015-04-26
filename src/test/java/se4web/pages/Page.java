@@ -44,7 +44,7 @@ public abstract class Page extends LoadableComponent<Page> {
   public void getAllLinks() {
     List<WebElement> no = driver.findElements(By.tagName("a"));
     int nooflinks = no.size();
-    System.out.println(nooflinks);
+    System.out.println("Number of links: " + nooflinks);
     for (WebElement pagelink : no) {
       String linktext = pagelink.getText();
       String link = pagelink.getAttribute("href");
