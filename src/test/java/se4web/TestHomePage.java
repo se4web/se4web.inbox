@@ -25,4 +25,12 @@ public class TestHomePage extends TestNgTestBase {
     Assert.assertFalse("".equals(homepage.getTitle()));
   }
 
+  @Test (priority=1)
+  public void testAllLinks() {
+//    driver.get(baseUrl);
+    homepage.getAllLinks();
+  }
+
+  //driver.findElement(By.xpath("//div[@class='jL']"));
+
 }
