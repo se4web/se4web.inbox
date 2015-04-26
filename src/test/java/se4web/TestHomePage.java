@@ -25,7 +25,7 @@ public class TestHomePage extends TestNgTestBase {
     Assert.assertFalse("".equals(homepage.getTitle()));
   }
 
-  @Test (priority=1)
+  @Test (enabled = false , priority=1)
   public void testAllLinks() {
 //    driver.get(baseUrl);
     homepage.getAllLinks();
