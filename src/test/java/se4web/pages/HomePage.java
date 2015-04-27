@@ -1,5 +1,6 @@
 package se4web.pages;
 
+import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.CacheLookup;
@@ -7,6 +8,8 @@ import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.How;
 import org.openqa.selenium.support.ui.LoadableComponent;
 import org.testng.Assert;
+
+import java.util.List;
 
 /**
  * Sample page
@@ -29,8 +32,8 @@ public class HomePage extends Page {
 
   @Override
   protected void load() {
-//    driver.get("https://inbox.google.com");
     parent.get();
-//    parent.loginTo("se4web@gmail.com", "Se4webSe4web");
   }
+  //driver.findElement(By.xpath("//div[@class='jL']"));
+
 }

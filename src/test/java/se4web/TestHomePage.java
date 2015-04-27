@@ -30,7 +30,4 @@ public class TestHomePage extends TestNgTestBase {
 //    driver.get(baseUrl);
     homepage.getAllLinks();
   }
-
-  //driver.findElement(By.xpath("//div[@class='jL']"));
-
 }
