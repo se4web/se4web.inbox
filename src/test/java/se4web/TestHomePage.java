@@ -30,10 +30,4 @@ public class TestHomePage extends TestNgTestBase {
 //    driver.get(baseUrl);
     homepage.getAllLinks();
   }
-
-  @Test (priority=1)
-  public void getMegalist() {
-    homepage.getMegalist();
-  }
-  //driver.findElement(By.xpath("//div[@class='jL']"));
 }

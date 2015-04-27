@@ -36,15 +36,4 @@ public class HomePage extends Page {
   }
   //driver.findElement(By.xpath("//div[@class='jL']"));
 
-  public void getMegalist() {
-    List<WebElement> megalist = driver.findElements(By.xpath("//div[@class='jL']"));
-    int megalistsize = megalist.size();
-    System.out.println(megalistsize);
-
-    for (WebElement megalistRow : megalist) {
-      System.out.println(megalistRow.getText());
-      System.out.println();
-    }
-  }
-
 }
