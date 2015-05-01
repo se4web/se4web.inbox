@@ -19,10 +19,10 @@ public class MegaList extends Page {
   @FindBy(how = How.CLASS_NAME, using = "tu")
   public WebElement megalistBox;
 
-  @FindBy(how = How.CLASS_NAME, using = "jL")
+  @FindBy(how = How.CLASS_NAME, using = "jS")
   public List<WebElement> itemList;
 
-  @FindBy(how = How.CLASS_NAME, using = "af-b4-bK")
+  @FindBy(how = How.CLASS_NAME, using = "ai-b8-bQ")
   public List<WebElement> sectionHeaders;
 
 //  driver.findElement(By.xpath("//span[contains(@jstcache,'238')]"));
