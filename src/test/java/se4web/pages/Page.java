@@ -55,7 +55,7 @@ public abstract class Page extends LoadableComponent<Page> {
   }
 
   public void HighlighMyElement(WebElement element) {
-    for (int i = 0; i < 3; i++) {
+    for (int i = 0; i < 5; i++) {
       JavascriptExecutor javascript = (JavascriptExecutor) driver;
       javascript.executeScript("arguments[0].setAttribute('style', arguments[1]);", element, "color: orange; border: 4px solid green;");
 //      javascript.executeScript("arguments[0].setAttribute('style', arguments[1]);", element, "color: orange; border: 4px solid orange;");
