@@ -48,6 +48,7 @@ public class TestLoginPage extends TestNgTestBase {
   @Test (dependsOnMethods = {"testLoginWrongCredentials"} , dependsOnGroups = { "beforeSignIn" } , groups = { "SignIn" } )
   public void testLoginRightCredentials() {
     driver.get(baseUrl);
+
     loginpage.loginTo("se4web@gmail.com", "Se4webSe4web");
 
 /*    homepage = new HomePage(driver);

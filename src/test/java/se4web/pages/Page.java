@@ -1,6 +1,7 @@
 package se4web.pages;
 
 import org.openqa.selenium.By;
+import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.PageFactory;
@@ -52,4 +53,16 @@ public abstract class Page extends LoadableComponent<Page> {
       System.out.println(link);
     }
   }
+
+  public void HighlighMyElement(WebElement element) {
+    for (int i = 0; i < 3; i++) {
+      JavascriptExecutor javascript = (JavascriptExecutor) driver;
+      javascript.executeScript("arguments[0].setAttribute('style', arguments[1]);", element, "color: orange; border: 4px solid green;");
+//      javascript.executeScript("arguments[0].setAttribute('style', arguments[1]);", element, "color: orange; border: 4px solid orange;");
+//      javascript.executeScript("arguments[0].setAttribute('style', arguments[1]);", element, "color: pink; border: 4px solid pink;");
+//      javascript.executeScript("arguments[0].setAttribute('style', arguments[1]);", element, "color: yellow; border: 4px solid yellow;");
+      javascript.executeScript("arguments[0].setAttribute('style', arguments[1]);", element, "");
+    }
+  }
+
 }

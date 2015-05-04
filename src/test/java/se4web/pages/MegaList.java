@@ -19,12 +19,19 @@ public class MegaList extends Page {
   @FindBy(how = How.CLASS_NAME, using = "tu")
   public WebElement megalistBox;
 
+//  @FindBy(how = How.CLASS_NAME, using = "ai-b8-bQ")
+  @FindBy(how = How.CSS, using = "div.tE>div>div[class^='section-header']")
+  public List<WebElement> sectionHeaders;
+
   @FindBy(how = How.CLASS_NAME, using = "jS")
   public List<WebElement> itemList;
-
+/*
   @FindBy(how = How.CLASS_NAME, using = "ai-b8-bQ")
   public List<WebElement> sectionHeaders;
 
+  @FindBy(how = How.CLASS_NAME, using = "ai-b8-bQ")
+  public List<WebElement> sectionHeaders;
+*/
 //  driver.findElement(By.xpath("//span[contains(@jstcache,'238')]"));
 //  driver.findElement(By.xpath("//span[@jstcache='238']"));
 
@@ -59,4 +66,11 @@ public class MegaList extends Page {
       System.out.println();
     }
   }
+/*
+  public class Section {
+    static int quantity; // quantity of visible sections
+    WebElement section;
+    List<WebElement>
+  }
+*/
 }

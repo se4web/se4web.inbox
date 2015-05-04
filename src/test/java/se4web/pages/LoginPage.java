@@ -55,14 +55,17 @@ public class LoginPage extends Page {
     }
 
     public void setEmailTextBox(String strUserName) {
+        HighlighMyElement(emailTextBox);
         emailTextBox.sendKeys(strUserName);
     }
 
     public void setPasswordTextBox(String password) {
+        HighlighMyElement(passwordTextBox);
         passwordTextBox.sendKeys(password);
     }
 
     public void clickSignIn() {
+        HighlighMyElement(signInButton);
         signInButton.click();
     }
 
